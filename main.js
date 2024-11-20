@@ -53,7 +53,18 @@ const canvasSquares = document.querySelectorAll('.canvas .square');
 const paletteColors = document.querySelectorAll('.palette-color');
 const currentBrush = document.querySelector('#current-brush');
 
+for(let color of paletteColors){
+  color.addEventListener('click', ()=>{
+    // console.log(color.classList[1])
+    brush.classList.replace(brush.classList[0], color.classList[1])
+  })
+}
 
+for (let square of canvasSquares) {
+  square.addEventListener('click', ()=>{
+   square.classList.replace(square.classList[1], square.classList[2])
+  })
+}
 
 /****************************
  * EVENT LISTENER FUNCTIONS *
@@ -65,7 +76,17 @@ const currentBrush = document.querySelector('#current-brush');
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+// function changeBrushColor(event) {
+//   const selectedColor = event.target.classList[1]
+//   currentBrush.classList.remove(currentBrush.classList[1])
+//   currentBrush.classList.add(selectedColor)
+// }
 
+// function paintSquare(event) {
+//   const brushColor = currentBrush.classList[1]
+//   event.target.classList.remove(event.target.classList[1])
+//   event.target.classList.add(brushColor)
+// }
 
 /**************************
  * WIRING IT ALL TOGETHER *
@@ -75,3 +96,11 @@ const currentBrush = document.querySelector('#current-brush');
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+paletteColors.forEach(color => {
+  color.addEventListener('click', changeBrushColor);
+});
+
+canvasSquares.forEach(square => {
+  square.addEventListener('click', paintSquare);
+});
