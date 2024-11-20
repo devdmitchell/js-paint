@@ -76,17 +76,17 @@ for (let square of canvasSquares) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
-// function changeBrushColor(event) {
-//   const selectedColor = event.target.classList[1]
-//   currentBrush.classList.remove(currentBrush.classList[1])
-//   currentBrush.classList.add(selectedColor)
-// }
+function changeBrushColor(event) {
+  const selectedColor = event.target.classList[1]
+  currentBrush.classList.remove(currentBrush.classList[1])
+  currentBrush.classList.add(selectedColor)
+}
 
-// function paintSquare(event) {
-//   const brushColor = currentBrush.classList[1]
-//   event.target.classList.remove(event.target.classList[1])
-//   event.target.classList.add(brushColor)
-// }
+function paintSquare(event) {
+  const brushColor = currentBrush.classList[1]
+  event.target.classList.remove(event.target.classList[1])
+  event.target.classList.add(brushColor)
+}
 
 /**************************
  * WIRING IT ALL TOGETHER *
