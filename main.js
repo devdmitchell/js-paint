@@ -56,13 +56,13 @@ const currentBrush = document.querySelector('#current-brush');
 for(let color of paletteColors){
   color.addEventListener('click', ()=>{
     // console.log(color.classList[1])
-    brush.classList.replace(brush.classList[0], color.classList[1])
+    currentBrush.classList.replace(currentBrush.classList[0], color.classList[1])
   })
 }
 
 for (let square of canvasSquares) {
   square.addEventListener('click', ()=>{
-   square.classList.replace(square.classList[1], square.classList[2])
+   square.classList.replace(square.classList[0], currentBrush.classList[0])
   })
 }
 
